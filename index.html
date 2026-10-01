@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>حائط المحبة للوطن - الابتدائية 247</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* حائط المحبة للوطن - الابتدائية 247
+   ستايل مبني على دليل هوية اليوم الوطني السعودي "عزّنا بطبعنا"
+   الألوان (صفحة 3.1): أخضر #00894A · تيل داكن #00343A · أزرق #0050AF · وردي #971A4D
+                       ليموني #5ABA1C · زيتي #607C4F · بنفسجي #6565E0 · ذهبي #7C5D21
+   الخطوط (صفحة 3.1): خط Saudi (الأساسي) + IBM Plex Sans Arabic (الثانوي) */
+body{margin:0}[hidden]{display:none!important}img{max-width:100%}
+
+:root{
+  /* palette from the guideline */
+  --green:#00894A; --teal:#00343A; --teal-deep:#002628; --teal-ink:#001A1D;
+  --blue:#0050AF; --magenta:#971A4D; --lime:#5ABA1C; --olive:#607C4F;
+  --violet:#6565E0; --gold:#7C5D21; --gold-soft:#B29155;
+  /* a hair darker than brand green so white text on cards reaches 5:1 contrast */
+  --green-card:#007A43;
+  --white:#ffffff; --danger:#ff9d8f;
+  --ink:#ffffff; --muted:#a9c9c0; --line:rgba(0,137,74,.55);
+  --f-display:"Saudi","IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+  --pat-diamond:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Cpath d='M14 1 21 7 14 13 7 7Z' fill='%2300894A'/%3E%3Cpath d='M14 4.5 17 7 14 9.5 11 7Z' fill='%23002628'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+body{color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;direction:rtl;
+  color-scheme:dark;
+  background-color:var(--teal-deep);
+  /* the identity's square grid + a soft green glow from the top */
+  background-image:
+    radial-gradient(ellipse 80% 38% at 50% 0%, rgba(0,137,74,.38), transparent 72%),
+    linear-gradient(rgba(0,137,74,.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,137,74,.13) 1px, transparent 1px);
+  background-size:auto,64px 64px,64px 64px;
+  background-attachment:fixed;min-height:100%}
+
+/* top: the seven identity colours / bottom: diamond motif strip */
+.page-band{height:8px;background:linear-gradient(90deg,
+  var(--blue) 0 14.28%, var(--magenta) 0 28.57%, var(--lime) 0 42.85%, var(--green) 0 57.14%,
+  var(--olive) 0 71.42%, var(--violet) 0 85.71%, var(--gold) 0)}
+.page-band:last-of-type{height:14px;background:var(--pat-diamond) 0 0/28px 14px repeat-x;
+  -webkit-mask-image:linear-gradient(to left,#000 30%,transparent);mask-image:linear-gradient(to left,#000 30%,transparent)}
+
+.wrap{max-width:1100px;margin:0 auto;padding-inline:16px;padding-block:24px 48px;display:grid;gap:30px}
+
+/* Header */
+.hero{background:var(--teal);color:var(--white);border:1px solid var(--green);border-radius:6px;overflow:hidden;position:relative;
+  box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.weave{height:24px;background:
+  conic-gradient(var(--green) 25%, var(--teal-ink) 0 50%, var(--green) 0 75%, var(--teal-ink) 0) 0 0/24px 24px}
+.hero-body{display:grid;justify-items:center;text-align:center;gap:12px;padding:34px clamp(16px,4vw,40px) 30px}
+.logo{display:block;width:min(100%,460px);height:auto;margin-bottom:10px}
+.eyebrow{font-size:.9rem;color:var(--lime);font-weight:600;
+  display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 10px}
+.eyebrow::before,.eyebrow::after{content:"";width:8px;height:8px;background:var(--green);transform:rotate(45deg)}
+.eyebrow .sep{width:5px;height:5px;background:var(--lime);transform:rotate(45deg)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(2rem,5.4vw,3.2rem);line-height:1.25;margin:0;text-wrap:balance}
+.slogan{font-family:var(--f-display);font-size:clamp(1.15rem,2.8vw,1.5rem);color:var(--gold-soft);margin:0;font-weight:600}
+.credits{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 0;margin-top:12px;padding-top:18px;border-top:1px dotted var(--green);width:min(100%,560px)}
+.credit{flex:1 1 200px;display:grid;gap:2px;padding-inline:16px}
+.credit + .credit{border-inline-start:1px solid var(--line)}
+.credit-label,.team-label{font-size:.85rem;color:var(--lime);font-weight:600}
+.credit b{font-family:var(--f-display);font-size:1.2rem;font-weight:600}
+.team{display:grid;gap:10px;justify-items:center;margin-top:8px;width:100%}
+.team-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:min(100%,760px)}
+.team-list li{border:1px solid var(--green);background:rgba(0,137,74,.16);border-radius:4px;padding:7px 12px;font-weight:500;font-size:.98rem}
+@media (max-width:520px){.team-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.eyebrow::before,.eyebrow::after{display:none}}
+@media (max-width:460px){.credit + .credit{border-inline-start:0}.credit{flex-basis:100%}}
+
+/* Compose */
+.compose{background:var(--teal);border:1px solid var(--green);border-radius:6px;padding:20px;display:grid;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.compose h2{font-family:var(--f-display);font-size:1.35rem;margin:0;color:var(--lime)}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.field{display:grid;gap:4px;flex:1 1 200px;min-width:0}
+label{font-size:.9rem;font-weight:600;color:var(--muted)}
+input,textarea{font:inherit;color:var(--white);background:var(--teal-ink);border:1px solid var(--line);border-radius:4px;padding:10px 12px;width:100%}
+textarea{min-height:96px;resize:vertical}
+input:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:.9rem;border:1px solid var(--line);background:var(--teal-ink);color:var(--white);border-radius:4px;padding:5px 12px;cursor:pointer}
+.chip:hover{border-color:var(--lime)}
+.swatches{display:flex;gap:10px;align-items:center}
+.sw{width:34px;height:34px;border-radius:8px;border:2px solid rgba(255,255,255,.25);cursor:pointer;padding:0}
+.sw[aria-pressed="true"]{outline:3px solid var(--lime);outline-offset:2px}
+.sw.green{background:var(--green-card)} .sw.sand{background:var(--gold)} .sw.white{background:var(--white)} .sw.mint{background:var(--blue)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
+.btn{font:inherit;font-weight:700;background:var(--green);color:var(--white);border:0;border-radius:4px;padding:11px 26px;cursor:pointer}
+.btn:hover{background:var(--green-card)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.status{font-size:.92rem;color:var(--muted);min-height:1.4em}
+.status.err{color:var(--danger)}
+.count{font-size:.88rem;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* Section headings: green square badge like the guideline's numbered titles */
+.wall-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;
+  padding-bottom:12px;border-bottom:1px solid var(--line)}
+.wall-head h2{font-family:var(--f-display);font-size:1.6rem;margin:0;color:var(--white);
+  display:flex;align-items:center;gap:12px;font-weight:700}
+.wall-head h2::before{content:"";width:16px;height:16px;background:var(--green);flex:none;
+  box-shadow:0 0 0 3px var(--teal-deep),0 0 0 4px var(--lime)}
+.wall-head .count{color:var(--lime);font-weight:600}
+
+/* Wall */
+.wall{columns:3 260px;column-gap:16px}
+.card{--deco:rgba(255,255,255,.15);position:relative;overflow:hidden;
+  break-inside:avoid;margin:0 0 16px;border-radius:10px;padding:22px 20px 14px;display:grid;gap:12px;
+  border:1px solid transparent;animation:pop .35s ease both;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+/* checkered corner = the pattern from the logo */
+.card::before{content:"";position:absolute;top:0;inset-inline-start:0;width:40px;height:20px;
+  background:conic-gradient(var(--deco) 25%, transparent 0 50%, var(--deco) 0 75%, transparent 0) 0 0/20px 20px;
+  pointer-events:none}
+.card.green{background:var(--green-card);color:var(--white)}
+.card.sand{background:var(--gold);color:var(--white)}
+.card.mint{background:var(--blue);color:var(--white)}
+.card.white{background:var(--white);color:var(--teal);--deco:rgba(0,137,74,.2)}
+.card p{margin:0;font-size:1.1rem;font-weight:500;white-space:pre-wrap;overflow-wrap:anywhere}
+.card footer{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.88rem;
+  padding-top:10px;border-top:1px solid currentColor;border-top-color:color-mix(in srgb,currentColor 28%,transparent)}
+.card .who{font-weight:700}
+.del{font:inherit;font-size:.8rem;background:transparent;color:inherit;border:1px solid currentColor;border-radius:4px;padding:2px 10px;cursor:pointer;opacity:.5}
+.del:hover{opacity:1}
+
+/* Principal's message */
+.lead{display:grid}
+.card.lead-card{margin:0;padding:58px clamp(18px,4vw,40px) 22px;border:2px solid var(--green);background:var(--teal);
+  text-align:center;justify-items:center;gap:16px;box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.card.lead-card::before{top:0;inset-inline:0;width:auto;height:24px;
+  background:conic-gradient(var(--green) 25%, var(--teal-ink) 0 50%, var(--green) 0 75%, var(--teal-ink) 0) 0 0/24px 24px}
+.card.lead-card p{font-size:clamp(1.15rem,2.4vw,1.4rem);line-height:1.95;max-width:62ch;font-weight:400}
+.card.lead-card footer{justify-content:center;width:100%;border-top-color:var(--line)}
+.card.lead-card .who{font-family:var(--f-display);font-size:1.15rem}
+.lead-tag{font-size:.88rem;font-weight:700;color:var(--lime);border-bottom:2px solid var(--green);padding-bottom:4px}
+
+/* Staff */
+.staff-groups{display:grid;gap:28px}
+.staff-group{display:grid;gap:12px}
+.staff-group h3{margin:0;font-family:var(--f-display);font-weight:600;font-size:1.15rem;color:var(--lime);display:flex;align-items:center;gap:12px}
+.staff-group h3::before{content:"";width:9px;height:9px;background:var(--lime);transform:rotate(45deg);flex:none}
+.staff-group h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.staff-wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.card.staff{padding:26px 22px 16px;gap:14px}
+.card.staff p{font-size:1.12rem;line-height:1.85}
+.card.staff .who{font-size:1rem}
+.who-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.cls{font-size:.82rem;font-weight:600;border:1px solid currentColor;border-radius:4px;padding:0 9px;opacity:.9;font-variant-numeric:tabular-nums}
+
+.empty{background:rgba(0,52,58,.7);border:2px dashed rgba(90,186,28,.45);border-radius:10px;padding:32px 20px;text-align:center;color:var(--muted);display:grid;gap:6px}
+.empty strong{font-family:var(--f-display);font-size:1.25rem;color:var(--white)}
+.notice{background:var(--teal);border:1px solid var(--green);border-radius:6px;padding:12px 16px;font-size:.95rem}
+
+/* Footer: hashtags from the guideline (page 22) */
+.credits-foot{display:grid;justify-items:center;gap:10px;text-align:center;color:var(--white);padding-top:26px;border-top:1px dotted var(--green)}
+.hashtags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;font-weight:700;font-size:1.05rem;color:var(--lime)}
+.latin{direction:ltr;unicode-bidi:isolate;letter-spacing:.32em;font-size:.78rem;color:var(--muted);font-weight:500;text-transform:uppercase}
+
+@keyframes pop{from{transform:translateY(6px);opacity:.4}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.card{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="page-band" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="hero">
+    <div class="weave" aria-hidden="true"></div>
+    <div class="hero-body">
+      <img class="logo" src="data:image/png;base64,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" alt="شعار اليوم الوطني السعودي: عزّنا بطبعنا" width="1000" height="282">
+      <div class="eyebrow"><span>اليوم الوطني السعودي</span><span class="sep" aria-hidden="true"></span><span>٢٣ سبتمبر ٢٠٢٦</span></div>
+      <h1>حائط المحبة للوطن</h1>
+      <div class="credits">
+        <div class="credit"><span class="credit-label">المدرسة</span><b>الابتدائية ٢٤٧</b></div>
+        <div class="credit"><span class="credit-label">مديرة المدرسة</span><b>أ. فضة المطيري</b></div>
+      </div>
+      <div class="team">
+        <span class="team-label">تصميم وتنسيق الإداريات</span>
+        <ul class="team-list">
+          <li>مضاوي القحطاني</li>
+          <li>بشرى البشري</li>
+          <li>آلاء الفراج</li>
+          <li>شريفة الشهراني</li>
+        </ul>
+      </div>
+    </div>
+    <div class="weave" aria-hidden="true"></div>
+  </header>
+
+  <section id="lead" class="lead" aria-label="كلمة مديرة المدرسة" hidden></section>
+
+  <section id="staff-sec" aria-labelledby="staff-title" style="display:grid;gap:14px" hidden>
+    <div class="wall-head"><h2 id="staff-title">كلمات منسوبات المدرسة</h2></div>
+    <div id="staff" class="staff-groups"></div>
+  </section>
+
+  <section aria-labelledby="wall-title" style="display:grid;gap:14px">
+    <div class="wall-head">
+      <h2 id="wall-title">مشاركات الطالبات</h2>
+      <span class="count" id="total"></span>
+    </div>
+    <div id="empty" class="empty">
+      <strong>الحائط بانتظار أول رسالة</strong>
+      <span>لا توجد مشاركات بعد.</span>
+    </div>
+    <div id="wall" class="wall"></div>
+  </section>
+
+  <footer class="credits-foot">
+    <div class="hashtags"><span>#عزنا_بطبعنا</span><span>#اليوم_الوطني_السعودي</span></div>
+    <div class="latin">#SaudiNationalDay</div>
+  </footer>
+</div>
+<div class="page-band" aria-hidden="true"></div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const toAr = n => String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
+  const wall = $("#wall"), empty = $("#empty");
+  const isOwner = false, me = null;
+  const docs = new Map();
+
+  function makeCard(it, staff) {
+    const card = document.createElement("article");
+    card.className = "card " + (staff ? "staff " : "") + (["green","sand","white","mint"].includes(it.c) ? it.c : "white");
+    const p = document.createElement("p"); p.textContent = it.m;
+    const f = document.createElement("footer");
+    const who = document.createElement("span"); who.className = "who-line";
+    const b = document.createElement("span"); b.className = "who"; b.textContent = it.n || "مشاركة";
+    who.append(b);
+    if (it.k) { const k = document.createElement("span"); k.className = "cls"; k.textContent = it.k; who.append(k); }
+    f.append(who);
+    if (isOwner || it.owner === me) {
+      const d = document.createElement("button"); d.className = "del"; d.type = "button"; d.textContent = "حذف";
+      d.setAttribute("aria-label", "حذف رسالة " + (it.n || ""));
+      d.addEventListener("click", () => removeItem(it.owner, it.id));
+      f.append(d);
+    }
+    card.append(p, f);
+    return card;
+  }
+
+  function render() {
+    const all = [];
+    docs.forEach((items, owner) => items.forEach(it => all.push({ ...it, owner })));
+    const lead = all.filter(x => x.p >= 30);
+    const leadEl = $("#lead");
+    leadEl.hidden = lead.length === 0;
+    leadEl.replaceChildren(...lead.map(it => {
+      const c = makeCard(it, true); c.classList.add("lead-card");
+      const tag = document.createElement("span"); tag.className = "lead-tag"; tag.textContent = "كلمة مديرة المدرسة";
+      c.prepend(tag); return c;
+    }));
+    const pinned = all.filter(x => x.p && x.p < 30).sort((a, b) => (b.p - a.p) || (a.t - b.t));
+    const rest = all.filter(x => !x.p).sort((a, b) => (a.o ?? 1e9) - (b.o ?? 1e9) || b.t - a.t);
+    $("#staff-sec").hidden = pinned.length === 0;
+    const order = ["الإدارة المدرسية","الإداريات","التوجيه الطلابي","المعلمات"];
+    const groups = new Map();
+    pinned.forEach(it => { const g = it.g || "الإداريات"; if (!groups.has(g)) groups.set(g, []); groups.get(g).push(it); });
+    const names = [...groups.keys()].sort((a, b) => (order.indexOf(a) + 99) % 99 - (order.indexOf(b) + 99) % 99);
+    $("#staff").replaceChildren(...names.map(g => {
+      const box = document.createElement("div"); box.className = "staff-group";
+      const h = document.createElement("h3"); h.textContent = g;
+      const grid = document.createElement("div"); grid.className = "staff-wall";
+      grid.append(...groups.get(g).map(it => makeCard(it, true)));
+      box.append(h, grid); return box;
+    }));
+    empty.hidden = rest.length > 0;
+    $("#total").textContent = rest.length ? toAr(rest.length) + " مشاركة" : "";
+    wall.replaceChildren(...rest.map(it => makeCard(it, false)));
+  }
+
+  const DATA = {"staff": [{"id": "lead", "n": "مديرة المدرسة: فضة المطيري", "k": "", "m": "بناتي الغاليات، ومنسوبات مدرستنا الكريمات: في ذكرى توحيد وطننا الغالي نستحضر مسيرة عزٍّ بناها الآباء والأجداد، ونجدّد العهد أن نغرس في نفوس بناتنا حب الوطن والانتماء إليه قولًا وعملًا. حفظ الله المملكة العربية السعودية، وأدام عليها أمنها ورخاءها، وكل عام ووطننا في عزٍّ وشموخ.", "c": "green", "t": 1790199999997, "p": 30, "g": ""}, {"id": "wakeela", "n": "الوكيلة: منيرة العنزي", "k": "", "m": "وطنٌ نفاخر به الدنيا، ونرى مستقبله في ضحكات طالباتنا وطموحهن. كل عام وبلادنا شامخة، وعزّنا بطبعنا.", "c": "mint", "t": 1790199999998, "p": 20, "g": "الإدارة المدرسية"}, {"id": "raeda", "n": "رائدة النشاط: عزيزة القحطاني", "k": "", "m": "في يوم الوطن تتزيّن مدرستنا بالأخضر، وتتسابق بناتنا بالكلمة والرسمة والنشيد. شكرًا لكل من شاركت، ودام وطننا مصدر فخرنا وإلهامنا.", "c": "white", "t": 1790199999999, "p": 19, "g": "الإدارة المدرسية"}, {"id": "s0", "n": "الإدارية: شريفة الشهراني", "k": "", "m": "في يومك يا وطني نجدّد العهد والولاء، ونفخر بأرضٍ جمعتنا على المحبة والعزّ. دمتَ شامخًا يا موطن الخير.", "c": "sand", "t": 1790200000000, "p": 15, "g": "الإداريات"}, {"id": "s1", "n": "الإدارية: بشرى البشري", "k": "", "m": "وطنٌ نسكنه ويسكننا، ومجدٌ نرويه لأجيالنا جيلًا بعد جيل. كل عام وبلادنا في رفعةٍ وأمان، وعزّنا بطبعنا.", "c": "green", "t": 1790200000001, "p": 15, "g": "الإداريات"}, {"id": "s2", "n": "الإدارية: آلاء الفراج", "k": "", "m": "حين نقول السعودية نقول الفخر كله؛ أرض الحرمين وموطن الكرام. حفظ الله وطننا وأدام عليه نعمة الأمن والرخاء.", "c": "mint", "t": 1790200000002, "p": 15, "g": "الإداريات"}, {"id": "s3", "n": "الإدارية: مضاوي القحطاني", "k": "", "m": "يومٌ نرفع فيه رايتنا خفّاقة، ونرى في عيون بناتنا مستقبلًا مشرقًا لوطنٍ يستحق منّا كل الوفاء.", "c": "white", "t": 1790200000003, "p": 15, "g": "الإداريات"}, {"id": "s4", "n": "الإدارية: لطيفة الحربي", "k": "", "m": "اللهم احفظ بلادنا المملكة العربية السعودية، وأدم عليها نعمة الأمن والإيمان، ووفّق قيادتها لما تحب وترضى، واجعلها دائمًا دار عزٍّ ورخاء.", "c": "sand", "t": 1790200000004, "p": 15, "g": "الإداريات"}, {"id": "x0", "n": "الإدارية: مها الحربي", "k": "", "m": "وطني، يا قصة فخرٍ نرويها كل صباح؛ أنت الأمان الذي نعمل في ظلّه، والعزّ الذي نرفع به رؤوسنا. دمتَ عاليًا شامخًا.", "c": "green", "t": 1790200000010, "p": 15, "g": "الإداريات"}, {"id": "x1", "n": "الإدارية: نجود القحطاني", "k": "", "m": "في ذكرى التوحيد نتذكّر أن ما نحن فيه من خيرٍ نعمةٌ تستحق الشكر والوفاء. كل عام ومملكتنا بألف خير.", "c": "mint", "t": 1790200000011, "p": 15, "g": "الإداريات"}, {"id": "x2", "n": "الإدارية: خلود السبيعي", "k": "", "m": "أرضٌ طيبة، وقيادةٌ حكيمة، وشعبٌ وفيّ؛ ثلاثٌ صنعت لنا وطنًا نحبه ونفديه. عزّنا بطبعنا ودام عزّك يا وطن.", "c": "white", "t": 1790200000012, "p": 15, "g": "الإداريات"}, {"id": "x3", "n": "الإدارية: مها الحجيلان", "k": "", "m": "نحتفي بك يا وطني حبًّا وانتماءً، ونعاهدك أن نكون خير سندٍ لبناتك في طريق العلم والعطاء.", "c": "sand", "t": 1790200000013, "p": 15, "g": "الإداريات"}, {"id": "x4", "n": "الإدارية: جميله المطيري", "k": "", "m": "يا وطن الخير والكرم، لك في القلب مكانٌ لا يتغيّر، ولك منّا دعاءٌ لا ينقطع بأن يحفظك الله ويُديم عزّك.", "c": "green", "t": 1790200000014, "p": 15, "g": "الإداريات"}, {"id": "x5", "n": "الإدارية: حصه الشمري", "k": "", "m": "يومٌ أخضر في تقويمنا وفي قلوبنا؛ نفرح فيه بوطنٍ جمعنا، ونفخر بماضيه، ونتفاءل بمستقبله المشرق.", "c": "mint", "t": 1790200000015, "p": 15, "g": "الإداريات"}, {"id": "x6", "n": "الإدارية: رفعه العتيبي", "k": "", "m": "وطنٌ نعيش خيره كل يوم، ونرى إنجازاته تكبر عامًا بعد عام. حفظ الله بلادنا وأدام عليها الأمن والاستقرار.", "c": "white", "t": 1790200000016, "p": 15, "g": "الإداريات"}, {"id": "x7", "n": "الإدارية: شيخة الحربي", "k": "", "m": "حبّ الوطن ليس كلمةً تُقال، بل عملٌ نتقنه وأمانةٌ نؤدّيها. كل عام ووطننا في رفعةٍ ونماء.", "c": "sand", "t": 1790200000017, "p": 15, "g": "الإداريات"}, {"id": "x8", "n": "الإدارية: نوف الايداء", "k": "", "m": "يا مملكة العزّ، أنتِ الحكاية التي نحكيها لبناتنا بفخر، والراية التي نرفعها بحب. دمتِ لنا ودمنا لكِ.", "c": "green", "t": 1790200000018, "p": 15, "g": "الإداريات"}, {"id": "x9", "n": "الإدارية: مها الشهري", "k": "", "m": "تحت سمائك يا وطني تزهر الأحلام وتتحقق، فشكرًا لك على الأمان، وشكرًا لكل يدٍ بنت وتبني مجدك.", "c": "mint", "t": 1790200000019, "p": 15, "g": "الإداريات"}, {"id": "x10", "n": "الموجهة الطلابية: الجازي المطيري", "k": "", "m": "بناتنا هنّ غرسُ الوطن وثمرته؛ نرعاهن اليوم بالحب والقيم ليكنّ غدًا فخرًا لبلادهن. كل عام ووطننا في أمانٍ وسلام.", "c": "white", "t": 1790200000020, "p": 14, "g": "التوجيه الطلابي"}, {"id": "x11", "n": "الموجهة الطلابية: شيخة اليامي", "k": "", "m": "الانتماء للوطن قيمةٌ نزرعها في قلوب بناتنا بالكلمة الطيبة والقدوة الحسنة. حفظ الله المملكة وأدام عليها نعمها.", "c": "sand", "t": 1790200000021, "p": 14, "g": "التوجيه الطلابي"}, {"id": "x12", "n": "المعلمة: مها المطيري", "k": "", "m": "نعلّم بناتنا الحروف والأرقام، ونعلّمهن قبلها أن الوطن أمانة، وأن حبّه يبدأ بالإتقان والاحترام. دام عزّك يا وطن.", "c": "green", "t": 1790200000022, "p": 13, "g": "المعلمات"}, {"id": "x13", "n": "المعلمة: صفية المخلفي", "k": "", "m": "في كل صباحٍ نرى الوطن في عيون طالباتنا؛ طموحًا يكبر، وأملًا يتجدّد. كل عام وبلادنا في عزٍّ وتقدّم.", "c": "mint", "t": 1790200000023, "p": 13, "g": "المعلمات"}, {"id": "x14", "n": "المعلمة: حصه الفوزان", "k": "", "m": "وطني، يا موطن الحرمين وقبلة المسلمين، لك الفخر ما بقي الدهر، ولك منّا الولاء والدعاء.", "c": "white", "t": 1790200000024, "p": 13, "g": "المعلمات"}, {"id": "x15", "n": "المعلمة: العنود القحطاني", "k": "", "m": "نربط دروسنا بالحياة، وأجمل درسٍ نقدّمه لبناتنا هو حب الوطن والعمل لأجله. عزّنا بطبعنا.", "c": "sand", "t": 1790200000025, "p": 13, "g": "المعلمات"}, {"id": "x16", "n": "المعلمة: ايمان البلوي", "k": "", "m": "كما تُبنى المسائل خطوةً بخطوة، بُني وطننا بالعزيمة والصبر حتى صار شامخًا بين الأمم. دمتَ يا وطني.", "c": "green", "t": 1790200000026, "p": 13, "g": "المعلمات"}, {"id": "x17", "n": "المعلمة: نوره النفيعي", "k": "", "m": "لو أحصينا نِعم الوطن ما أحصيناها؛ أمنٌ وخيرٌ ووحدة. فالحمد لله على وطنٍ نفخر به كل يوم.", "c": "mint", "t": 1790200000027, "p": 13, "g": "المعلمات"}, {"id": "x18", "n": "المعلمة: مها المنيف", "k": "", "m": "تتزيّن مدرستنا بالأخضر، وتتزيّن قلوبنا بالفخر. كل عام ووطننا الغالي في رخاءٍ وأمان.", "c": "white", "t": 1790200000028, "p": 13, "g": "المعلمات"}, {"id": "x19", "n": "المعلمة: نوره الراقي", "k": "", "m": "Proud to be Saudi — فخورون بوطنٍ يعلّمنا أن نحلم ونحقق. كل عام والمملكة بخير.", "c": "sand", "t": 1790200000029, "p": 13, "g": "المعلمات"}, {"id": "x20", "n": "المعلمة: منى القحطاني", "k": "", "m": "وطني، أنت الدرس الأول في الانتماء، والحكاية الأجمل في الوفاء. حفظك الله وأدام مجدك.", "c": "green", "t": 1790200000030, "p": 13, "g": "المعلمات"}, {"id": "x21", "n": "المعلمة: عائشه المويس", "k": "", "m": "نغرس في بناتنا اليوم قيم الوطن، ليحملن رايته غدًا بالعلم والأخلاق. دام عزّ بلادنا.", "c": "mint", "t": 1790200000031, "p": 13, "g": "المعلمات"}, {"id": "x22", "n": "المعلمة: عبير القحطاني", "k": "", "m": "من العلم نبدأ، وإلى الوطن نعود بثمرة ما تعلّمنا. كل عام والمملكة منارةٌ للعلم والإنجاز.", "c": "white", "t": 1790200000032, "p": 13, "g": "المعلمات"}, {"id": "x23", "n": "المعلمة: فاطمه الحربي", "k": "", "m": "في وطني تتجلّى عظمة الخالق في أرضٍ واسعةٍ وسماءٍ صافية وشعبٍ كريم. حفظ الله بلادنا من كل سوء.", "c": "sand", "t": 1790200000033, "p": 13, "g": "المعلمات"}, {"id": "x24", "n": "المعلمة: علياء السحيمي", "k": "", "m": "لك يا وطني حبٌّ يكبر معنا، ووفاءٌ لا يزول. كل عام وأنت الأجمل والأعزّ.", "c": "green", "t": 1790200000034, "p": 13, "g": "المعلمات"}, {"id": "x25", "n": "المعلمة: مصباح العتيبي", "k": "", "m": "وطنٌ يضيء دروبنا بالأمن كما يضيء المصباح ليله؛ فدمتَ نورًا وعزًّا لأبنائك وبناتك.", "c": "mint", "t": 1790200000035, "p": 13, "g": "المعلمات"}, {"id": "x26", "n": "المعلمة: نوف الرشيد", "k": "", "m": "فخرٌ أن ننتمي لهذه الأرض، وشرفٌ أن نُسهم في بناء أجيالها. كل عام ووطننا شامخ.", "c": "white", "t": 1790200000036, "p": 13, "g": "المعلمات"}, {"id": "x27", "n": "المعلمة: فاطمه الشهري", "k": "", "m": "نحتفل بك يا وطني بقلوبٍ ممتنّة، ودعاءٍ صادق أن يحفظك الله ويُديم عليك الأمن والإيمان.", "c": "sand", "t": 1790200000037, "p": 13, "g": "المعلمات"}, {"id": "x28", "n": "المعلمة: سحر العتيبي", "k": "", "m": "وطني، مع كل فكرةٍ جديدة تتعلمها بناتنا يكبر حلمك ويقترب. دمتَ عزيزًا شامخًا، وعزّنا بطبعنا.", "c": "green", "t": 1790200000038, "p": 13, "g": "المعلمات"}], "grade1-class1": [{"id": "g0", "n": "الجوهرة العجمي", "k": "فصل 1/1", "m": "أحب وطني كثيرًا", "c": "green", "t": 1790200000100, "o": 0}, {"id": "g2", "n": "الجوهرة الرويلي", "k": "فصل 1/1", "m": "أنا سعودية وأفتخر", "c": "white", "t": 1790200000102, "o": 2}, {"id": "g4", "n": "الجوهرة آل دوحان", "k": "فصل 1/1", "m": "أحبك يا سعودية", "c": "green", "t": 1790200000104, "o": 4}, {"id": "g6", "n": "ترانيم الغامدي", "k": "فصل 1/1", "m": "شكرًا يا وطني", "c": "white", "t": 1790200000106, "o": 6}, {"id": "g8", "n": "جمان الرشيد", "k": "فصل 1/1", "m": "عزّنا بطبعنا", "c": "green", "t": 1790200000108, "o": 8}, {"id": "g10", "n": "جمانا العنزي", "k": "فصل 1/1", "m": "يا رب احفظ وطني", "c": "white", "t": 1790200000110, "o": 10}, {"id": "g12", "n": "دينا العنزي", "k": "فصل 1/1", "m": "السعودية في قلبي", "c": "green", "t": 1790200000112, "o": 12}, {"id": "g14", "n": "ريتال العتيبي", "k": "فصل 1/1", "m": "دام عزك يا وطن", "c": "white", "t": 1790200000114, "o": 14}, {"id": "g16", "n": "شادن الشيباني", "k": "فصل 1/1", "m": "أفرح بيوم وطني", "c": "green", "t": 1790200000116, "o": 16}, {"id": "g18", "n": "شيخه الحويماني", "k": "فصل 1/1", "m": "أحبك يا مملكتي", "c": "white", "t": 1790200000118, "o": 18}, {"id": "g20", "n": "شيهانة آل مخلص", "k": "فصل 1/1", "m": "أرسم علم وطني بحب", "c": "green", "t": 1790200000120, "o": 20}, {"id": "g22", "n": "غاده العتيبي", "k": "فصل 1/1", "m": "كل يوم أحب وطني أكثر", "c": "white", "t": 1790200000122, "o": 22}, {"id": "g24", "n": "غالية العتيبي", "k": "فصل 1/1", "m": "يا رب اجعل وطني سعيدًا", "c": "green", "t": 1790200000124, "o": 24}, {"id": "g26", "n": "فضيلة الزهراني", "k": "فصل 1/1", "m": "علمنا الأخضر يرفرف", "c": "white", "t": 1790200000126, "o": 26}, {"id": "g28", "n": "فهدة المطوع", "k": "فصل 1/1", "m": "وطني أغلى شيء", "c": "green", "t": 1790200000128, "o": 28}, {"id": "g30", "n": "كيان الدوسري", "k": "فصل 1/1", "m": "أحب أن أخدم وطني", "c": "white", "t": 1790200000130, "o": 30}, {"id": "g32", "n": "لانا القحطاني", "k": "فصل 1/1", "m": "وطني يكبر ونحن نكبر", "c": "green", "t": 1790200000132, "o": 32}, {"id": "g34", "n": "ماسه العبد", "k": "فصل 1/1", "m": "أحب مدرستي ووطني", "c": "white", "t": 1790200000134, "o": 34}, {"id": "g36", "n": "مسك الغامدي", "k": "فصل 1/1", "m": "السعودية أحلى بلاد", "c": "green", "t": 1790200000136, "o": 36}, {"id": "g38", "n": "مهره العتيبي", "k": "فصل 1/1", "m": "أحب الرياض عاصمة وطني", "c": "white", "t": 1790200000138, "o": 38}, {"id": "g40", "n": "ميلاف النفيعي", "k": "فصل 1/1", "m": "اللهم احفظ بلادي", "c": "green", "t": 1790200000140, "o": 40}, {"id": "g42", "n": "نوره السهلي", "k": "فصل 1/1", "m": "وطني فيه الخير", "c": "white", "t": 1790200000142, "o": 42}, {"id": "g44", "n": "هبه العنزي", "k": "فصل 1/1", "m": "وطني بيت الجميع", "c": "green", "t": 1790200000144, "o": 44}, {"id": "g46", "n": "هند العتيبي", "k": "فصل 1/1", "m": "فرحتي بوطني كبيرة", "c": "white", "t": 1790200000146, "o": 46}, {"id": "g48", "n": "ورد العوفي", "k": "فصل 1/1", "m": "أبتسم لأني سعودية", "c": "green", "t": 1790200000148, "o": 48}], "grade1-class2": [{"id": "g1", "n": "ألين العنزي", "k": "فصل 1/2", "m": "وطني أجمل وطن", "c": "mint", "t": 1790200000101, "o": 1}, {"id": "g3", "n": "البتول سليمان", "k": "فصل 1/2", "m": "كل عام ووطني بخير", "c": "sand", "t": 1790200000103, "o": 3}, {"id": "g5", "n": "ايلان الزهراني", "k": "فصل 1/2", "m": "علم بلادي أخضر جميل", "c": "mint", "t": 1790200000105, "o": 5}, {"id": "g7", "n": "جنى بن طواله", "k": "فصل 1/2", "m": "وطني بيتي الكبير", "c": "sand", "t": 1790200000107, "o": 7}, {"id": "g9", "n": "ديالا العتيبي", "k": "فصل 1/2", "m": "أحب بلادي وأهلي", "c": "mint", "t": 1790200000109, "o": 9}, {"id": "g11", "n": "ديم فيصل العتيبي", "k": "فصل 1/2", "m": "وطني فرحتي", "c": "sand", "t": 1790200000111, "o": 11}, {"id": "g13", "n": "ديم معاذ العتيبي", "k": "فصل 1/2", "m": "أحب علم بلادي", "c": "mint", "t": 1790200000113, "o": 13}, {"id": "g15", "n": "رنيم العمري", "k": "فصل 1/2", "m": "وطني غالٍ عليّ", "c": "sand", "t": 1790200000115, "o": 15}, {"id": "g17", "n": "رهف الزهراني", "k": "فصل 1/2", "m": "وطني نور قلبي", "c": "mint", "t": 1790200000117, "o": 17}, {"id": "g19", "n": "ريم العتيبي", "k": "فصل 1/2", "m": "بلادي بلادي", "c": "sand", "t": 1790200000119, "o": 19}, {"id": "g21", "n": "ريما الشهري", "k": "فصل 1/2", "m": "وطني أمان", "c": "mint", "t": 1790200000121, "o": 21}, {"id": "g23", "n": "سارة العمري", "k": "فصل 1/2", "m": "نحن نحب السعودية", "c": "sand", "t": 1790200000123, "o": 23}, {"id": "g25", "n": "ساره العنزي", "k": "فصل 1/2", "m": "وطني جميل مثل الورد", "c": "mint", "t": 1790200000125, "o": 25}, {"id": "g27", "n": "سلطانه العتيبي", "k": "فصل 1/2", "m": "أنا بنت السعودية", "c": "sand", "t": 1790200000127, "o": 27}, {"id": "g29", "n": "سمو السفياني", "k": "فصل 1/2", "m": "يوم وطني يوم سعيد", "c": "mint", "t": 1790200000129, "o": 29}, {"id": "g31", "n": "غاليه العتيبي", "k": "فصل 1/2", "m": "أتعلّم لأجل وطني", "c": "sand", "t": 1790200000131, "o": 31}, {"id": "g33", "n": "فهدة العنزي", "k": "فصل 1/2", "m": "شكرًا لمن يحمي وطني", "c": "mint", "t": 1790200000133, "o": 33}, {"id": "g35", "n": "لمى بن طواله", "k": "فصل 1/2", "m": "وطني الحبيب", "c": "sand", "t": 1790200000135, "o": 35}, {"id": "g37", "n": "ليان العرجاني", "k": "فصل 1/2", "m": "قلبي أخضر لوطني", "c": "mint", "t": 1790200000137, "o": 37}, {"id": "g39", "n": "ميرال الدائل", "k": "فصل 1/2", "m": "يا وطني أنت الأجمل", "c": "sand", "t": 1790200000139, "o": 39}, {"id": "g41", "n": "هلا العريعر", "k": "فصل 1/2", "m": "أنا فخورة بوطني", "c": "mint", "t": 1790200000141, "o": 41}, {"id": "g43", "n": "وتين حميد", "k": "فصل 1/2", "m": "أحب وطني من كل قلبي", "c": "sand", "t": 1790200000143, "o": 43}, {"id": "g45", "n": "ورد الحرازي", "k": "فصل 1/2", "m": "علم بلادي عالٍ دائمًا", "c": "mint", "t": 1790200000145, "o": 45}, {"id": "g47", "n": "يارا آل معيض", "k": "فصل 1/2", "m": "كل عام وأنت بخير يا وطني", "c": "sand", "t": 1790200000147, "o": 47}, {"id": "g49", "n": "ياسمين الشمري", "k": "فصل 1/2", "m": "وطني حلو وأنا أحبه", "c": "mint", "t": 1790200000149, "o": 49}]};
+  Object.entries(DATA).forEach(([k,v]) => docs.set(k, v));
+
+  render();
+})();
+</script>
+
+</body>
+</html>
